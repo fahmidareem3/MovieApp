@@ -1,109 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto+Condensed&display=swap');
-:root{
-    --primary-color: #22254b;
-    --seconday-color: #373b69;
+@import url("https://fonts.googleapis.com/css2?family=Poppins display=swap");
+:root {
+  --primary-color: #22254b;
+  --seconday-color: #373b69;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--primary-color);
-    margin:0; 
-    
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  margin: 0;
 }
-header{
-    padding: 0.4rem;
+header {
+  padding: 0.4rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--seconday-color);
+}
+
+.search {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  font-size: 5px;
+  border-radius: 50px;
+  font-family: inherit;
+  padding: 1px 5px;
+  color: #fff;
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.movie {
+  width: 90px;
+
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: var(--seconday-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5px;
+}
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 2px;
+  letter-spacing: 0.4px;
+}
+.movie-info h3 {
+  font-size: 6px;
+  margin-top: 0;
+  font-weight: lighter;
+}
+
+.movie-info span {
+  background-color: var(--primary-color);
+  font-size: 6px;
+  padding: 2px 2px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+.movie-info span.orange {
+  color: orange;
+}
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  background-color: #fff;
+  font-size: 4px;
+  padding: 2px 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+.movie:hover .overview {
+  transform: translateY(0);
+}
+.movie:hover .movie-info {
+  opacity: 30%;
+}
+
+@media screen and (min-width: 1000px) {
+  .movie {
+    width: 300px;
+  }
+
+  header {
+    padding: 0.5rem;
     display: flex;
     justify-content: flex-end;
     background-color: var(--seconday-color);
-}
-
-.search{
+  }
+  .search {
     background-color: transparent;
-    border: 1px solid var(--primary-color);
-    font-size: 5px;
+    border: 2px solid var(--primary-color);
+    font-size: 15px;
     border-radius: 50px;
     font-family: inherit;
     padding: 1px 5px;
     color: #fff;
-}
-
-.search::placeholder{
-    color: #7378c5;
-}
-.search:focus{
-    outline: none;
-    background-color: var(--primary-color);
-}
-
-main{
-    display:flex;
-    flex-wrap: wrap;
-}
-
-.movie{
-    width:90px;
-    
-    margin: 0 auto;
-    background-color: var(--seconday-color);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    position:relative;
-    overflow: hidden;
-    border-radius: 1.5px;
-
-}
-.movie img{
-    width: 100%;
-}
-
-.movie-info{
+  }
+  .overview {
+    background-color: rgba(0, 0, 0, 0.521);
+    font-size: 13px;
+    padding: 15px 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+    opacity: 95%;
+    color: rgb(238, 225, 225);
+  }
+  .overview h3 {
+    color: #fff;
+  }
+  .movie-info {
     color: #eee;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 10px;
+    margin-left: 10px;
     padding: 1px 2px;
     letter-spacing: 0.4px;
-    
-    
-}
-.movie-info h3{
-    font-size: 6px;
-    margin-top: 0;
+  }
+  .movie-info h3 {
+    font-size: 13px;
+    margin-right: 50px;
     font-weight: lighter;
-}
-
-.movie-info span{
+    padding: 4px 7px;
+  }
+  .movie-info span {
     background-color: var(--primary-color);
-    font-size: 6px ;
-    padding: 2px 2px;
-    border-radius: 2px;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 5px;
     font-weight: bold;
-}
-
-.movie-info span.green{
-    color: lightgreen;
-}
-.movie-info span.orange{
-    color: orange;
-}
-.movie-info span.red{
-    color: red;
-}
-
-.overview{
-    background-color: #fff;
-    font-size: 4px;
-    padding: 2px 4px; 
-    position: absolute;
-    left: 0;
-    right:0;
-    bottom:0;
-    max-height: 100%;
-    transform:translateY(101%);
-    transition: transform 0.3s ease-in;
-}
-.movie:hover .overview{
-    transform: translateY(0);
+  }
 }
