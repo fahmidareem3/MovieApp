@@ -65,6 +65,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 1px 2px;
+  margin: 5px 5px;
   letter-spacing: 0.4px;
 }
 .movie-info h3 {
@@ -92,7 +93,7 @@ main {
 }
 
 .overview {
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.521);
   font-size: 4px;
   padding: 2px 4px;
   position: absolute;
@@ -102,6 +103,11 @@ main {
   max-height: 100%;
   transform: translateY(101%);
   transition: transform 0.3s ease-in;
+  opacity: 95%;
+  color: rgb(238, 225, 225);
+}
+.overview h3{
+  color: #fff;
 }
 .movie:hover .overview {
   transform: translateY(0);
